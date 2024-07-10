@@ -1,0 +1,34 @@
+.section-frame {
+	padding: 4.0rem 0;
+}
+.component-frame {
+	margin: 0 auto;
+	max-width: 140.0rem;
+	padding: 0 2.0rem;
+	@media screen and (max-width: $bp-medium) {
+		&.full-width {
+			padding: 0;
+		}
+	}
+}
+.mixed-content {
+	background-color: white;
+	border: $default-border;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 3.0rem;
+	@media screen and (max-width: $bp-small) {
+		display: block;
+		padding: 0 2.0rem;
+	}
+	&.alternate {
+		background-color: transparent;
+		border: 0;
+		gap: 4.0rem;
+		padding: 0;
+	}
+}
+.sct-secondary {
+	background-color: $primary-color;
+	color: white;
+}

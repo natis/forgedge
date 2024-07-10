@@ -1,0 +1,74 @@
+div:not(.DataTables) {
+	&>table {
+		border-collapse: collapse;
+		border-bottom: 0.3rem solid $primary-color-alternate;
+		border-top: 0.3rem solid $primary-color-alternate;
+		margin-bottom: 5.0rem;
+		thead {
+			@media screen and (max-width: $bp-small) {
+				display: none;
+			}
+			th {
+				border-bottom: 0.2rem solid $primary-color-alternate;
+			}
+		}
+		tbody {
+			tr {
+				&:nth-child(odd) {
+					th{
+						background-color: $secondary-color;
+					}
+				}
+			}
+		}
+		tr {
+			&:nth-child(odd) {
+				td {
+					background-color: $secondary-color;
+				}
+			}
+			@media screen and (max-width: $bp-small) {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+		th {
+			font-size: 2.0rem;
+			font-weight: 600;
+			line-height: 1.14;
+			padding: 3.0rem 4.0rem;
+			text-transform: uppercase;
+		}
+		td {
+			padding: 2.4rem 4.0rem;
+		}
+		th, td {
+			border-left: 0.1rem solid rgba($primary-color-alternate, .2);
+			text-align: left;
+			vertical-align: text-top;
+			&:first-child {
+				border-left: 0;
+			}
+			@media screen and (max-width: $bp-small) {
+				border-left: 0;
+				padding: 2.0rem 1.6rem 0;
+				&:first-child {
+					border-top: 0.1rem solid rgba($primary-color-alternate, .2);
+					padding-top: 2.4rem;
+					
+				}
+				&:last-child {
+					padding-bottom: 2.4rem;
+				}
+				&::before {
+					content: attr(data-th);
+					display: block;
+					font-size: 2.1rem;
+					font-weight: 600;
+					margin-bottom: 1.0rem;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}

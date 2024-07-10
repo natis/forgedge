@@ -1,0 +1,42 @@
+.breadcrumbs {
+	@extend .component-frame;
+	ul {
+		display: flex;
+		margin: 2.0rem 0;
+	}
+	li {
+		color: $atlanta-fed-blue;
+		&::after {
+			color: black;
+			content: '/';
+			display: inline-block;
+			margin: 0 1.0rem;
+		}
+		&:last-child {
+			&::after {
+				display: none;
+			}
+		}
+	}
+	a {
+		color: black;
+		position: relative;
+		text-decoration: none;
+		&::after {
+			background-color: black;
+			bottom: -0.2rem;
+			content: '';
+			display: block;
+			height: 0.1rem;
+			left: 0;
+			position: absolute;
+			transition: width 0.25s ease-in-out;
+			width: 0;
+		}
+		&:hover {
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+}

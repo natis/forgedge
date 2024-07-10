@@ -1,0 +1,66 @@
+.spotlights {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4.0rem;
+}
+.spotlight {
+	background-color: white;
+	&.hero, .mixed-content.alternate & {
+		border: $default-border;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		@media screen and (max-width: $bp-small) {
+			display: block;
+		}
+	}
+	&.major, &.minor {
+		border: $default-border;
+		display: grid;
+		grid-template-rows: auto auto;
+		.mixed-content & {
+			border: 0;
+		}
+		.alternate & {
+			border: $default-border;
+		}
+	}
+	.mixed-content & {
+		display: block;
+	}
+	img {
+		height: auto;
+		width: 100%;
+	}
+	&.hero {
+		img {
+			object-fit: cover;
+			height: 100%;
+		}
+	}
+}
+.spotlight-content {
+	padding: 0 3.0rem;
+	@media screen and (max-width: $bp-small) {
+		padding: 0 2.0rem;
+	}
+	.hero & {
+		order: 2;
+	}
+	.alternate &, .minor & {
+		order: 1;
+	}
+	.mixed-content & {
+		padding: 0;
+	}
+	.mixed-content.alternate & {
+		padding: 0 2.4rem;
+	}
+}
+.spotlight-image {
+	.hero & {
+		order: 1;
+	}
+	.minor & {
+		order: 2;
+	}
+}

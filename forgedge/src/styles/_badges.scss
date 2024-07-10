@@ -1,0 +1,36 @@
+.taglist {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.0rem;
+	list-style: none;
+	margin: 2.0rem 0;
+	padding: 0;
+	li {
+		border: 0;
+	}
+}
+.tag {
+	align-items: center;
+	border-radius: $default-border-radius;
+	display: flex;
+	gap: 0.8rem;
+	line-height: 1;
+	padding: 0.9rem;
+	text-decoration: none;
+	transition: background-color .5s ease-in-out;
+	white-space: nowrap;
+	&.content-type {
+		background-color: rgba(0, 0, 0, 0.10);
+		color: #343a40;
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.20);
+		}
+	}
+	&.category {
+		background-color: rgba(0, 96, 160, 0.10);
+		color: $atlanta-fed-blue;
+		&:hover {
+			background-color: rgba(0, 96, 160, 0.20);
+		}
+	}
+}

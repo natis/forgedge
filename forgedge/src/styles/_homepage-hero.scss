@@ -1,0 +1,59 @@
+.hero-home {
+	background-color: $primary-color;
+	color: white;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	@media screen and (max-width: $bp-medium) {
+		display: block;
+		background-color: white;
+		color: black;
+	}
+	&.alternate {
+		justify-content: flex-start;
+	}
+	&.sct-secondary {
+		background-color: $marble-column;
+		color: black;
+	}
+}
+.hero-image {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	top: 0;
+	@media screen and (max-width: $bp-medium) {
+		position: static;
+	}
+	img {
+		display: block;
+		height: 100%;
+		object-fit: cover;
+		width: 100%;
+	}
+}
+.hero-content {
+	max-width: 48.0rem;
+	margin: 4.5rem;
+	position: relative;
+	z-index: 200;
+	@media screen and (max-width: $bp-medium) {
+		margin: 0;
+		max-width: none;
+		padding: 1.5rem 2.5rem;
+	}
+	.button-group {
+		margin-top: 3.0rem;
+		@media screen and (max-width: $bp-small) {
+			.btn {
+				display: block;
+				margin: 1.0rem 0;
+				width: 100%;
+			}
+		}
+	}
+}
+.home-hero-title {
+	font-size: 3.2rem;
+	font-weight: 600;
+}
